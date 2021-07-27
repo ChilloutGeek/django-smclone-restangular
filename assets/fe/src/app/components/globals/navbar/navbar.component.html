@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-lg">
+      <a class="navbar-brand" href="{% url 'feed' %}">Scottgram</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="col d-flex justify-content-center">
+          <form type="GET" class="d-flex">
+           <input class="form-control me-1" id="search_box" type="text" name="search_box" aria-label="Search">
+              <button class="btn btn-outline-success" id="search_submit" type="submit">Search</button>
+          </form>
+        </div>
+      <div class="navbar-nav d-flex justify-content-end">
+          <a class="nav-link active" aria-current="page" href="{% url 'feed' %}">Home</a>
+          <a class="nav-link" href="#">Inbox</a>
+          <a class="nav-link" href="#">Explore</a>
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Profile</a>
+        </div>
+      </div>
+</nav>

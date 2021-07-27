@@ -6,7 +6,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 
-
+import { GlobalsModule } from 'src/app/components/globals/globals.module'
 import { FeedModule } from 'src/app/components/feed/feed.module';
 import { APP_ROUTES } from 'src/app/app.route';
 
@@ -18,7 +18,8 @@ import { APP_ROUTES } from 'src/app/app.route';
     BrowserModule,
     UIRouterModule.forRoot(APP_ROUTES),
     FeedModule,
-    HttpClientModule
+    HttpClientModule,
+    GlobalsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
