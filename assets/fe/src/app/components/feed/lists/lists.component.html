@@ -1,14 +1,21 @@
-<p>lists works!</p>
-
 <div class="container">
-<div *ngFor="let post of postlist">
-    <div class="card my-3">
-        <div class="card-header p-3">
-            <p> {{ post.title }} </p>
-            <p> {{ post.created }}</p>
-            <p> {{ post.published_date }}</p>
-                <img src="{{post.imagecontent}}"> 
+    <div class="row">
+        <div class="col-8 mt-4 mb-4" >
+            <div *ngFor="let post of postlist">
+                <div class="card my-3">
+                    <div class="card-header p-3">
+                        <img src="{{post.imagecontent}}" class="card-img-top"> 
+                        <div class="card-body">
+                        <h5 class="card-title"> {{ post.title }} </h5>
+                        <p class="card-text"> {{ post.created }}</p>
+                        <p class="card-text"> {{ post.published_date }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='col-4'>
+        <app-sidelists></app-sidelists>
         </div>
     </div>
-</div>
 </div>
