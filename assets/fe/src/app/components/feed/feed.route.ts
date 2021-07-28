@@ -5,7 +5,7 @@ import { SidelistsComponent } from './sidelists/sidelists.component';
 export const FEED_ROUTES: any[] = [
     {
         name: 'post-list',
-        url: "/posts",
+        url: "/homefeed",
         views: {
             'header': NavbarComponent,
             'content': ListsComponent, SidelistsComponent

@@ -18,4 +18,11 @@ export class FeedService {
     return resp;
   }
 
+  async getProfile(){
+    const resp = await this.http.get('api/users/')
+    .toPromise();
+
+    return resp;
+  }
+
 }

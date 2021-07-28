@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FeedService } from 'src/app/commons/services/feed/feed.service';
+import { Profile } from 'src/app/commons/models/feed.model'
 
 @Component({
   selector: 'app-sidelists',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidelistsComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private feedsvc: FeedService
+  ) { }
+
+  ProfileList = [] as Profile[];
+  
 
   ngOnInit(): void {
+    this.feedsvc.getProfile()
+    .then((resp) =>{
+      this.ProfileList = resp as Profile[];
+    })
   }
 
 }

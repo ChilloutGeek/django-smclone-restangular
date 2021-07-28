@@ -6,3 +6,10 @@ export interface Post {
     created:any;
     published_date:any;
 }
+
+export interface Profile {
+    id: number;
+    user: number;
+    bio: string;
+    profilepic: string;
+}
