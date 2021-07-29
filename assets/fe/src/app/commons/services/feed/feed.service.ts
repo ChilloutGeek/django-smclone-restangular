@@ -12,7 +12,7 @@ export class FeedService {
 
 
   async getList() {
-    const resp = await this.http.get('/api/feed/')
+    const resp = await this.http.get('/api/posts/')
       .toPromise();
 
     return resp;

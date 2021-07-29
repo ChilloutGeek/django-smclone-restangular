@@ -8,7 +8,8 @@ export const FEED_ROUTES: any[] = [
         url: "/homefeed",
         views: {
             'header': NavbarComponent,
-            'content': ListsComponent, SidelistsComponent
+            'content': ListsComponent, 
+            SidelistsComponent
         }
     },
 ]
