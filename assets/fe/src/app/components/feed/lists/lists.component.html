@@ -5,10 +5,14 @@
                 <div class="card my-3">
                     <div class="card-header p-3">
                         <img src="{{post.imagecontent}}" class="card-img-top"> 
+                        
                         <div class="card-body">
-                        <h5 class="card-title"> {{ post.title }} </h5>
-                        <p class="card-text"> {{ post.created }}</p>
-                        <p class="card-text"> {{ post.published_date }}</p>
+                            <h5 class="card-title"> {{ post.title }} </h5>
+                            <p class="card-text"> {{ post.created }}</p>
+                            <p class="card-text"> {{ post.published_date }}</p>
+
+                            <app-comments [postId]="post.id"></app-comments>
+
                         </div>
                     </div>
                 </div>

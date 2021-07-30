@@ -1,0 +1,13 @@
+<form [formGroup]="Form" (ngSubmit)="onSubmit()">
+    <div>
+        <label>Title</label>
+        <input type="text" formControlName="title">
+        <p *ngIf="Form.get('title')?.touched && Form.getError('required', 'title')">*This field is required</p>
+    </div>
+    <div>
+        <label>Description</label>
+        <textarea formControlName="description"></textarea>
+        <p *ngIf="Form.get('description')?.touched && Form.getError('required', 'description')">*This field is required</p>
+    </div>
+    <button type="submit">Create</button>
+</form>

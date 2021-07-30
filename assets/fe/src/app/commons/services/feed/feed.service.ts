@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Post } from 'src/app/commons/models/feed/feed.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,17 +11,23 @@ export class FeedService {
     private http: HttpClient
   ) { }
 
-
-  async getList() {
-    const resp = await this.http.get('/api/posts/')
+  async create(data: Post) {
+    const resp = await this.http.post('/api/feed/posts/', data)
       .toPromise();
 
     return resp;
   }
 
-  async getProfile(){
-    const resp = await this.http.get('api/users/')
-    .toPromise();
+  async getList() {
+    const resp = await this.http.get('/api/feed/posts/')
+      .toPromise();
+
+    return resp;
+  }
+
+  async getComments(postId: number) {
+    const resp = await this.http.get(`/api/feed/posts/${postId}/comments/`)
+      .toPromise();
 
     return resp;
   }

@@ -1,12 +1,12 @@
-<img class="img-thumbnail rounded-circle" src="#">
+<img class="img-thumbnail rounded-circle" src="{{ProfileUser.profilepic}}">
 <div class="dp-text profile-info ml-3">
-    <a href="#"></a> 
+        <a *ngIf="ProfileUser.user" href="#">{{ ProfileUser.user.username }}</a> 
 </div>
 
 <div>
-    <div *ngFor="let profile of ProfileList">
-        <p> Suggestions for you </p>           
+    <p> Suggestions for you </p>   
+    <div *ngFor="let profile of ProfileList">        
         <img class="img-thumbnail rounded-circle smaller-profile-pic mw-100" src="{{ profile.profilepic }}">
-        <a class="dp-text" href="#">{{ profile.user }}}</a>
+        <a *ngIf="profile.user" class="dp-text" href="#">{{ profile.user.username }}</a>
     </div> 
 </div>

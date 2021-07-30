@@ -18,10 +18,10 @@ class PostView(ViewSet):
 
         return Response(serializer.data, status=200)
 
-    def createpost(self,request):
+    def create(self,request):
         """Creates a single post
         """
-        serializer = PostSerializer(data=request.data, many=True)
+        serializer = PostSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
 
@@ -29,12 +29,11 @@ class PostView(ViewSet):
 
 class CommentView(ViewSet):
 
-    def get(self,request):
+    def comments(self,request, post_id):
         """get the lists of comments in each posts.
         """
-        posts = Post.objects.all()
-        comments = Comments.objects.filter(post__in=posts) #get the comments in posts 
-        serializer = CommentSerializer(comments, many=True)
+        post = Post.objects.get(id=post_id)
+        serializer = CommentSerializer(post.comments.all(), many=True)
 
         return Response(serializer.data, status=201)        
         

@@ -13,7 +13,6 @@ class PostSerializer(ModelSerializer):
         'imagecontent', 
         'created', 
         'published_date',
-        'comments'
         )
 
 class CommentSerializer(ModelSerializer):

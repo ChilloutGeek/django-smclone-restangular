@@ -5,10 +5,10 @@ urlpatterns = [
 
     path('posts/', PostView.as_view({
         'get':'postlist',
-        'post':'createpost'
+        'post':'create'
     })),
 
-    path('comments/', CommentView.as_view({
-        'get':'get'
+    path('posts/<int:post_id>/comments/', CommentView.as_view({
+        'get':'comments'
     }))
 ]

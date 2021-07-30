@@ -9,4 +9,4 @@ class Profile(models.Model):
     profilepic = models.ImageField(null=True, blank=True, upload_to='profiles/', default='default.jpeg')
     
     def __str__(self):
-        return str(self.user)
+        return f"{self.user}"

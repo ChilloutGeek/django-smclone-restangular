@@ -2,7 +2,7 @@ from django.urls import path
 from .views import ProfileList, ProfileUser
 
 urlpatterns = [
-    path('userprofile/', ProfileUser.as_view({
+    path('profileuser/', ProfileUser.as_view({
         'get':'get',
     })),
 
